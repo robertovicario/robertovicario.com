@@ -19,8 +19,8 @@ function clear() {
 function deploy() {
     cd app
     python freeze.py
-    ghp-import -n -p build
     cd ..
+    ghp-import -p -f -b main app/build
 }
 
 if [ "$1" == "start" ]; then
