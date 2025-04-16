@@ -1,184 +1,148 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- Jinja :: Template -->
+{% extends 'page.html' %}
 
-<head>
+<!-- Jinja :: Theme -->
+{% set theme_title = 'Software Engineer' %}
 
-    <!-- Meta -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Jinja :: Styles -->
+{% block styles %}{% endblock %}
 
-    <!-- Theme-->
-    <title>Roberto Vicario</title>
-    <meta name="description" content="Discover the work and projects of Roberto Vicario, a software engineer specializing in web development, cloud computing, and AI. Explore his portfolio and get in touch today.">
-    <meta name="keywords" content="Roberto Vicario, software engineer, web development, cloud computing, AI, portfolio">
-    <meta name="robots" content="index, follow">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='/img/favicons/apple-touch-icon.png') }}">
-    <link rel="icon" type="image/png" sizes="192x192" href="{{ url_for('static', filename='/img/favicons/android-chrome-192x192.png') }}">
-    <link rel="icon" type="image/png" sizes="512x512" href="{{ url_for('static', filename='/img/favicons/android-chrome-512x512.png') }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='/img/favicons/favicon-32x32.png') }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='/img/favicons/favicon-16x16.png') }}">
-    <link rel="manifest" href="{{ url_for('static', filename='/img/favicons/site.webmanifest') }}">
-    <link rel="shortcut icon" href="{{ url_for('static', filename='/img/favicons/favicon.ico') }}">
-    <meta name="theme-color" content="#000000">
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
-
-    <!-- Libraries -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='/vendor/swiper/dist/css/swiper.min.css') }}"/>
-    <link rel="stylesheet" href="{{ url_for('static', filename='/vendor/fancybox/dist/jquery.fancybox.min.css') }}"/>
-    <link rel="stylesheet" href="{{ url_for('static', filename='/css/themebau.min.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='/css/custom.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css') }}">
-</head>
-
-<body class="bg-dark">
-
-    <!-- Jinja :: Header -->
-    {% include 'includes/header.html' %}
-
-    <!-- Content -->
-    <div class="content-wrap">
-        <div class="swiper text-white swiper-fullscreen-vertical" data-swiper-slides="1" data-swiper-speed="600" data-swiper-vertical="true">
-            <div class="swiper-container">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="card-wrapper h-100">
-                            <a class="card card-fullscreen text-white" href="about-me.html" data-cursor-style="cursor-circle" data-cursor-text="view">
-                                <span class="card-img">
-                                    <img src="{{ url_for('static', filename='/img/home/1.png') }}" alt="">
-                                    <span class="background-color" style="background-color: rgba(14, 14, 14, .2);"></span>
+<!-- Jinja :: Content -->
+{% block content %}
+<div class="content-wrap">
+    <div class="swiper text-white swiper-fullscreen-vertical" data-swiper-slides="1" data-swiper-speed="600" data-swiper-vertical="true">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="card-wrapper h-100">
+                        <a class="card card-fullscreen text-white" href="about-me.html" data-cursor-style="cursor-circle" data-cursor-text="view">
+                            <span class="card-img">
+                                <img src="{{ url_for('static', filename='/img/home/1.png') }}" alt="">
+                                <span class="background-color" style="background-color: rgba(14, 14, 14, .2);"></span>
+                            </span>
+                            <span class="card-img-overlay container">
+                                <h2 class="card-title h1 mb-0">
+                                    <span class="card-title-decoration"></span>
+                                    <span>Hi, I'm Roberto 👋🏻</span>
+                                    <br><br>
+                                    <h5 class="mb-0 text-white">Software Engineer<br>@ Motus ml</h5>
+                                </h2>
+                                <span class="btn btn-clean">
+                                    <span class="me-3">about me</span>
+                                    <i class="bi bi-arrow-right"></i>
                                 </span>
-                                <span class="card-img-overlay container">
-                                    <h2 class="card-title h1 mb-0"><span class="card-title-decoration"></span>Hi, I'm Roberto 👋🏻<br><br><h5 class="mb-0 text-white">Software Engineer<br>@motusml</h5></h2>
-                                    <span class="btn btn-clean">about me<svg class="icon-arrow icon-arrow-right" width='26' height='11' viewBox='0 0 26 11' fill='none' xmlns='http://www.w3.org/2000/svg'>
-                                            <path d='M20.5 1L25 5.5L20.5 10' stroke='currentColor' stroke-width='1.3' stroke-linecap='round' stroke-linejoin='round'/>
-                                            <path d='M7 5.5H25' stroke='currentColor' stroke-width='1.3' stroke-linecap='round' stroke-linejoin='round'/>
-                                        </svg></span>
-                                </span>
-                            </a>
-                            <div class="card-social-container container">
-                                <ul class="card-social nav nav-gap-md align-items-center flex-column text-white">
-                                    <li class="nav-item">
-                                        <a href="https://www.instagram.com/__roberrevil" target="_blank" rel="noopener noreferrer" class="nav-link">
-                                            <i class="fa-brands fa-instagram" style="font-size: 24px;"></i>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="https://www.linkedin.com/in/robertovicario" target="_blank" rel="noopener noreferrer" class="nav-link">
-                                            <i class="fa-brands fa-linkedin-in" style="font-size: 24px;"></i>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="https://github.com/robertovicario" target="_blank" rel="noopener noreferrer" class="nav-link">
-                                            <i class="fa-brands fa-github" style="font-size: 24px;"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
+                            </span>
+                        </a>
+                        <div class="card-social-container container">
+                            <ul class="card-social nav nav-gap-md align-items-center flex-column text-white">
+                                <li class="nav-item">
+                                    <a href="{{ url_for('index.home') }}" target="_blank" rel="noopener noreferrer" class="nav-link">
+                                        <i class="fa-brands fa-instagram" style="font-size: 24px;"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ url_for('index.home') }}" target="_blank" rel="noopener noreferrer" class="nav-link">
+                                        <i class="fa-brands fa-linkedin-in" style="font-size: 24px;"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ url_for('index.home') }}" target="_blank" rel="noopener noreferrer" class="nav-link">
+                                        <i class="fa-brands fa-github" style="font-size: 24px;"></i>
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="swiper-slide">
-                        <div class="card-wrapper h-100">
-                            <a class="card card-fullscreen text-white" href="portfolio.html" data-cursor-style="cursor-circle" data-cursor-text="view">
-                                <span class="card-img">
-                                    <img src="{{ url_for('static', filename='/img/home/2.png') }}" alt="">
-                                    <span class="background-color" style="background-color: rgba(14, 14, 14, .2);"></span>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card-wrapper h-100">
+                        <a class="card card-fullscreen text-white" href="portfolio.html" data-cursor-style="cursor-circle" data-cursor-text="view">
+                            <span class="card-img">
+                                <img src="{{ url_for('static', filename='/img/home/2.png') }}" alt="">
+                                <span class="background-color" style="background-color: rgba(14, 14, 14, .2);"></span>
+                            </span>
+                            <span class="card-img-overlay container">
+                                <h2 class="card-title h1 mb-0">
+                                    <span class="card-title-decoration"></span>
+                                    <span>Explore my portfolio 🤟🏻</span>
+                                </h2>
+                                <span class="btn btn-clean">
+                                    <span>learn more</span>
+                                    <svg class="icon-arrow icon-arrow-right" width='26' height='11' viewBox='0 0 26 11' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                                        <path d='M20.5 1L25 5.5L20.5 10' stroke='currentColor' stroke-width='1.3' stroke-linecap='round' stroke-linejoin='round'/>
+                                        <path d='M7 5.5H25' stroke='currentColor' stroke-width='1.3' stroke-linecap='round' stroke-linejoin='round'/>
+                                    </svg>
                                 </span>
-                                <span class="card-img-overlay container">
-                                    <h2 class="card-title h1 mb-0"><span class="card-title-decoration"></span>Explore my portfolio 🤟🏻</h2>
-                                    <span class="btn btn-clean">learn more<svg class="icon-arrow icon-arrow-right" width='26' height='11' viewBox='0 0 26 11' fill='none' xmlns='http://www.w3.org/2000/svg'>
-                                            <path d='M20.5 1L25 5.5L20.5 10' stroke='currentColor' stroke-width='1.3' stroke-linecap='round' stroke-linejoin='round'/>
-                                            <path d='M7 5.5H25' stroke='currentColor' stroke-width='1.3' stroke-linecap='round' stroke-linejoin='round'/>
-                                        </svg></span>
-                                </span>
-                            </a>
-                            <div class="card-social-container container">
-                                <ul class="card-social nav nav-gap-md align-items-center flex-column text-white">
-                                    <li class="nav-item">
-                                        <a href="https://www.instagram.com/__roberrevil" target="_blank" rel="noopener noreferrer" class="nav-link">
-                                            <i class="fa-brands fa-instagram" style="font-size: 24px;"></i>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="https://www.linkedin.com/in/robertovicario" target="_blank" rel="noopener noreferrer" class="nav-link">
-                                            <i class="fa-brands fa-linkedin-in" style="font-size: 24px;"></i>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="https://github.com/robertovicario" target="_blank" rel="noopener noreferrer" class="nav-link">
-                                            <i class="fa-brands fa-github" style="font-size: 24px;"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
+                            </span>
+                        </a>
+                        <div class="card-social-container container">
+                            <ul class="card-social nav nav-gap-md align-items-center flex-column text-white">
+                                <li class="nav-item">
+                                    <a href="{{ url_for('index.home') }}" target="_blank" rel="noopener noreferrer" class="nav-link">
+                                        <i class="fa-brands fa-instagram" style="font-size: 24px;"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ url_for('index.home') }}" target="_blank" rel="noopener noreferrer" class="nav-link">
+                                        <i class="fa-brands fa-linkedin-in" style="font-size: 24px;"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ url_for('index.home') }}" target="_blank" rel="noopener noreferrer" class="nav-link">
+                                        <i class="fa-brands fa-github" style="font-size: 24px;"></i>
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="swiper-slide">
-                        <div class="card-wrapper h-100">
-                            <a class="card card-fullscreen text-white" href="contact-me.html" data-cursor-style="cursor-circle" data-cursor-text="view">
-                                <span class="card-img">
-                                    <img src="{{ url_for('static', filename='/img/home/3.png') }}" alt="">
-                                    <span class="background-color" style="background-color: rgba(14, 14, 14, .2);"></span>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card-wrapper h-100">
+                        <a class="card card-fullscreen text-white" href="contact-me.html" data-cursor-style="cursor-circle" data-cursor-text="view">
+                            <span class="card-img">
+                                <img src="{{ url_for('static', filename='/img/home/3.png') }}" alt="">
+                                <span class="background-color" style="background-color: rgba(14, 14, 14, .2);"></span>
+                            </span>
+                            <span class="card-img-overlay container">
+                                <h2 class="card-title h1 mb-0"><span class="card-title-decoration"></span>Let's get in touch 🤙🏻</h2>
+                                <span class="btn btn-clean">
+                                    <span>contact me</span>
+                                    <svg class="icon-arrow icon-arrow-right" width='26' height='11' viewBox='0 0 26 11' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                                        <path d='M20.5 1L25 5.5L20.5 10' stroke='currentColor' stroke-width='1.3' stroke-linecap='round' stroke-linejoin='round'/>
+                                        <path d='M7 5.5H25' stroke='currentColor' stroke-width='1.3' stroke-linecap='round' stroke-linejoin='round'/>
+                                    </svg>
                                 </span>
-                                <span class="card-img-overlay container">
-                                    <h2 class="card-title h1 mb-0"><span class="card-title-decoration"></span>Let's get in touch 🤙🏻</h2>
-                                    <span class="btn btn-clean">contact me<svg class="icon-arrow icon-arrow-right" width='26' height='11' viewBox='0 0 26 11' fill='none' xmlns='http://www.w3.org/2000/svg'>
-                                            <path d='M20.5 1L25 5.5L20.5 10' stroke='currentColor' stroke-width='1.3' stroke-linecap='round' stroke-linejoin='round'/>
-                                            <path d='M7 5.5H25' stroke='currentColor' stroke-width='1.3' stroke-linecap='round' stroke-linejoin='round'/>
-                                        </svg></span>
-                                </span>
-                            </a>
-                            <div class="card-social-container container">
-                                <ul class="card-social nav nav-gap-md align-items-center flex-column text-white">
-                                    <li class="nav-item">
-                                        <a href="https://www.instagram.com/__roberrevil" target="_blank" rel="noopener noreferrer" class="nav-link">
-                                            <i class="fa-brands fa-instagram" style="font-size: 24px;"></i>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="https://www.linkedin.com/in/robertovicario" target="_blank" rel="noopener noreferrer" class="nav-link">
-                                            <i class="fa-brands fa-linkedin-in" style="font-size: 24px;"></i>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="https://github.com/robertovicario" target="_blank" rel="noopener noreferrer" class="nav-link">
-                                            <i class="fa-brands fa-github" style="font-size: 24px;"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
+                            </span>
+                        </a>
+                        <div class="card-social-container container">
+                            <ul class="card-social nav nav-gap-md align-items-center flex-column text-white">
+                                <li class="nav-item">
+                                    <a href="{{ url_for('index.home') }}" target="_blank" rel="noopener noreferrer" class="nav-link">
+                                        <i class="fa-brands fa-instagram" style="font-size: 24px;"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ url_for('index.home') }}" target="_blank" rel="noopener noreferrer" class="nav-link">
+                                        <i class="fa-brands fa-linkedin-in" style="font-size: 24px;"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ url_for('index.home') }}" target="_blank" rel="noopener noreferrer" class="nav-link">
+                                        <i class="fa-brands fa-github" style="font-size: 24px;"></i>
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="swiper-pagination-wrapper container justify-content-end">
-                <div class="swiper-pagination"></div>
-            </div>
+        </div>
+        <div class="swiper-pagination-wrapper container justify-content-end">
+            <div class="swiper-pagination"></div>
         </div>
     </div>
+</div>
+{% endblock %}
 
-    <!-- Libraries -->
-    <!-- TODO: external=_True -->
-    <script src="{{ url_for('static', filename='/vendor/jquery/dist/jquery.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='/vendor/object-fit-images/dist/ofi.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='/vendor/bootstrap/dist/js/bootstrap.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='/vendor/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='/vendor/swiper/dist/js/swiper.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='/vendor/animejs/lib/anime.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='/vendor/rellax/rellax.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='/vendor/jquery-countdown/dist/jquery.countdown.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='/vendor/moment/min/moment.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='/vendor/moment-timezone/builds/moment-timezone-with-data.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='/vendor/isotope-layout/dist/isotope.pkgd.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='/vendor/isotope-packery/packery-mode.pkgd.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='/vendor/jarallax/dist/jarallax.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='/vendor/jarallax/dist/jarallax-video.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='/vendor/fancybox/dist/jquery.fancybox.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='/js/themebau.min.js') }}"></script>
-</body>
-
-</html>
+<!-- Jinja :: Scripts -->
+{% block scripts %}{% endblock %}
