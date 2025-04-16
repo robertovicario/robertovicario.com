@@ -21,6 +21,10 @@ function deploy() {
     python freeze.py
     cd ..
     ghp-import -p -f -b main app/build
+
+    git add app/templates/README.md
+    git commit -m "README.md"
+    git push origin main
 }
 
 if [ "$1" == "start" ]; then
