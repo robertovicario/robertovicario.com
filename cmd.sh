@@ -16,6 +16,13 @@ function clear() {
     docker-compose down --volumes --rmi all
 }
 
+function deploy() {
+    cd app
+    python freeze.py
+    ghp-import -n -p build
+    cd ..
+}
+
 if [ "$1" == "start" ]; then
     start
 elif [ "$1" == "stop" ]; then
@@ -24,6 +31,8 @@ elif [ "$1" == "build" ]; then
     build
 elif [ "$1" == "clear" ]; then
     clear
+elif [ "$1" == "deploy" ]; then
+    deploy
 else
-    echo "Usage: $0 {start|stop|build|clear}"
+    echo "Usage: $0 {start|stop|build|clear|deploy}"
 fi
